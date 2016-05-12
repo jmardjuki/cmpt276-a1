@@ -1,11 +1,31 @@
 table {
-  width: 80%;
-  border-color: grey;
+  width: 90%;
+  border-collapse: collapse;
 }
 
 th {
   text-align: left;
+  background-color: #eee;
 }
+
+table, th, td {
+   border: 1px solid #bbb;
+}
+
+button {
+  border-radius: 4px;
+  color: white;
+  background: #a6192e;
+}
+
 #activity-text {
   color: #a6192e;
+}
+
+#content-wrapper {
+  border: 1px solid #D2E1E6;
+  border-radius: 2px;
+  background-color: #E9EFF1;
+  width: 80%;
+  padding-left: 5%;
 }
