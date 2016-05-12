@@ -1,0 +1,11 @@
+table {
+  width: 80%;
+  border-color: grey;
+}
+
+th {
+  text-align: left;
+}
+#activity-text {
+  color: #a6192e;
+}
