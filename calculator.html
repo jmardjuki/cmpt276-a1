@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <link rel="stylesheet" type="text/css" href="calculator.css"></style>
+    <link rel="stylesheet" type="text/css" href="calculator.css"/>
+    <title>CMPT276: Assignment 1 - Calculator</title>
   </head>
   <body>
     <div id="wrapper">
-      <h2>Grade Calculator</h2>
       <div id="content-wrapper">
+        <h2>Grade Calculator</h2>
         <div id="content">
           <h4 id="activity-text">Activities</h4>
-          <p>Give Grades to the numeric activities</p>
+          <p>Give grades to the numeric activities</p>
           <table>
             <thead>
               <tr>
@@ -24,36 +25,40 @@
                 <td>Activity 1</td>
                 <td>A1</td>
                 <td><input type="text" size="5" /> / <input type="text" size="5"/> </td>
-                <td><span id="percentage-1"</td>
+                <td><span id="percentage-1"></span></td>
               </tr>
               <tr>
                 <td>Activity 2</td>
                 <td>A2</td>
                 <td><input type="text" size="5" /> / <input type="text" size="5"/> </td>
-                <td><span id="percentage-2"</td>
+                <td><span id="percentage-2"></span></td>
               </tr>
               <tr>
                 <td>Activity 3</td>
                 <td>A3</td>
                 <td><input type="text" size="5" /> / <input type="text" size="5"/> </td>
-                <td><span id="percentage-3"</td>
+                <td><span id="percentage-3"></span></td>
               </tr>
               <tr>
                 <td>Activity 4</td>
                 <td>A4</td>
                 <td><input type="text" size="5" /> / <input type="text" size="5"/> </td>
-                <td><span id="percentage-4"</td>
+                <td><span id="percentage-4"></span></td>
               </tr>
-              <tr>
-                <td><strong>TOTAL</strong></td>
-                <td></td>
-                <td></td>
-                <td><span id="percentage-total"</td>
+              <tr class="totalCell">
+                <td class="totalCell"><strong>TOTAL</strong></td>
+                <td class="totalCell"></td>
+                <td class="totalCell"></td>
+                <td class="totalCell"><span id="percentage-total"></span></td>
               </tr>
             </tbody>
           </table>
-          <button>AVERAGE</button>
-          <button>MEAN</button>
+          <br />
+          <br />
+          <div id="my-buttons">
+            <button>AVERAGE</button>
+            <button>MEAN</button>
+          </div>
         </div>
       </div>
     </div>

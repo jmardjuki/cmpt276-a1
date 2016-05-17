@@ -1,11 +1,16 @@
 table {
-  width: 90%;
+  width: 100%;
   border-collapse: collapse;
+  cellpadding: "10";
 }
 
 th {
   text-align: left;
   background-color: #eee;
+  padding: 0.5%;
+}
+td {
+  padding: 0.5%;
 }
 
 table, th, td {
@@ -16,6 +21,17 @@ button {
   border-radius: 4px;
   color: white;
   background: #a6192e;
+  border:none !important;
+  box-shadow:none !important;
+  width: 8%;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+}
+
+.totalCell {
+  padding: 0.5%;
+  padding-top: 1%;
+  padding-bottom: 0%;
 }
 
 #activity-text {
@@ -23,9 +39,26 @@ button {
 }
 
 #content-wrapper {
+  margin: 0 auto
+}
+
+#content {
   border: 1px solid #D2E1E6;
   border-radius: 2px;
   background-color: #E9EFF1;
   width: 80%;
-  padding-left: 5%;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-bottom: 1%;
+  overflow: hidden;
+}
+
+#wrapper {
+  align-self: center;
+  background-color: white;
+  border-radius: 2px;
+}
+
+#my-buttons {
+  text-align: right;
 }
