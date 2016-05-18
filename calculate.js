@@ -47,7 +47,7 @@ function meanCalc() {
   }
   // Write result, if denum is zero alert user
   // iF count less than equal to zero don't write
-  if ( count !== 0 ) {
+  if ( count > 0 ) {
     result = sum/count * 100;
     var totalBox = document.getElementById("percentage-total");
     totalBox.innerHTML = '<span>' + result.toString() + '</span>';
@@ -74,14 +74,14 @@ function avgCalc() {
       count = count + 1;
     }
     else if ( nameObj[0].value || nameObj[1].value ) {
-      alertString = "WARNING: Activity " + i.toString() + "is incomplete, therfore, it will not be used for the average"
+      alertString = "WARNING: Activity " + i.toString() + " is incomplete, therfore, it will not be used for the average"
       alert(alertString)
     }
   }
   // Write result, if denum is zero alert the user
   // iF count less than equal to zero don't write
-  if ( count !== 0 ) {
-    result = sumN/sumD * 100;
+  if ( count > 0 ) {
+    var result = sumN/sumD * 100;
     var totalBox = document.getElementById("percentage-total");
     totalBox.innerHTML = '<span>' + result.toString() + '</span>';
   }
@@ -90,3 +90,8 @@ function avgCalc() {
   }
 
 }
+
+// Error Checking to do
+// - Number only input
+// - No zero for denuminator
+// Trim decimal points, make sure all answer are expected
