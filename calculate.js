@@ -12,13 +12,19 @@
       var actBox = document.getElementById(idStr);
       actBox.addEventListener("blur", function (){
         var nameObj = document.getElementsByName(nameStr);
+        var alertString = "WARNING: Denominator cannot be 0. Please try again."
+        if ( nameObj[1].value && nameObj[1].value < 1) {
+          alert(alertString);
+          nameObj[1].value = "";
+          nameObj[1].focus();
+        }
         if (nameObj[0].value && nameObj[1].value) {
           var num = nameObj[0].value;
           var den = nameObj[1].value;
           var result = num/den * 100;
           if ( result % 1 !== 0 ) {
-            result = result.toFixed(2);
-          }          
+            result = result.toFixed(1);
+          }
           var percentageBox = document.getElementById(percentageId);
           percentageBox.innerHTML = '<span>' + result.toString() + '</span>';
         }
@@ -40,7 +46,6 @@ function meanCalc() {
       var num = nameObj[0].value;
       var den = nameObj[1].value;
       sum = sum + (num/den);
-      // Fill the percentage too, user might change
       count = count + 1;
     }
     else if ( nameObj[0].value || nameObj[1].value ) {
@@ -55,7 +60,7 @@ function meanCalc() {
     var totalBox = document.getElementById("percentage-total");
     // If not a whole number, trim to 2 decimal points
     if ( result % 1 !== 0 ) {
-      result = result.toFixed(2);
+      result = result.toFixed(1);
     }
     totalBox.innerHTML = '<span>' + result.toString() + '</span>';
   }
@@ -76,8 +81,8 @@ function avgCalc() {
       // If one of them are not defined, skip it
       var num = nameObj[0].value;
       var den = nameObj[1].value;
-      sumN = sumN + num;
-      sumD = sumD + den;
+      sumN = sumN + parseInt(num);
+      sumD = sumD + parseInt(den);
       count = count + 1;
     }
     else if ( nameObj[0].value || nameObj[1].value ) {
@@ -92,7 +97,7 @@ function avgCalc() {
     var totalBox = document.getElementById("percentage-total");
     // If not a whole number, trim to 2 decimal points
     if ( result % 1 !== 0 ) {
-      result = result.toFixed(2);
+      result = result.toFixed(1);
     }
     totalBox.innerHTML = '<span>' + result.toString() + '</span>';
   }
@@ -104,5 +109,4 @@ function avgCalc() {
 
 // Error Checking to do
 // - Number only input
-// - No zero for denuminator
-// Trim decimal points, make sure all answer are expected
+// - Only allows bigger denominator
