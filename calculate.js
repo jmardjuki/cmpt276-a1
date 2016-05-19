@@ -109,4 +109,3 @@ function avgCalc() {
 
 // Error Checking to do
 // - Number only input
-// - Only allows bigger denominator
