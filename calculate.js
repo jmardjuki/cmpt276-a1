@@ -16,6 +16,9 @@
           var num = nameObj[0].value;
           var den = nameObj[1].value;
           var result = num/den * 100;
+          if ( result % 1 !== 0 ) {
+            result = result.toFixed(2);
+          }          
           var percentageBox = document.getElementById(percentageId);
           percentageBox.innerHTML = '<span>' + result.toString() + '</span>';
         }
@@ -50,6 +53,10 @@ function meanCalc() {
   if ( count > 0 ) {
     result = sum/count * 100;
     var totalBox = document.getElementById("percentage-total");
+    // If not a whole number, trim to 2 decimal points
+    if ( result % 1 !== 0 ) {
+      result = result.toFixed(2);
+    }
     totalBox.innerHTML = '<span>' + result.toString() + '</span>';
   }
   else {
@@ -83,6 +90,10 @@ function avgCalc() {
   if ( count > 0 ) {
     var result = sumN/sumD * 100;
     var totalBox = document.getElementById("percentage-total");
+    // If not a whole number, trim to 2 decimal points
+    if ( result % 1 !== 0 ) {
+      result = result.toFixed(2);
+    }
     totalBox.innerHTML = '<span>' + result.toString() + '</span>';
   }
   else {
