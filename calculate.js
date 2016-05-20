@@ -10,6 +10,7 @@
     for (var j = 1; j <= 2; j++) {
       var idStr = nameStr + "_box" + j.toString();
       var actBox = document.getElementById(idStr);
+      var percentageBox = document.getElementById(percentageId);
       actBox.addEventListener("blur", function (){
         var nameObj = document.getElementsByName(nameStr);
         var alertString = "WARNING: Denominator cannot be 0. Please try again."
@@ -25,8 +26,12 @@
           if ( result % 1 !== 0 ) {
             result = result.toFixed(1);
           }
-          var percentageBox = document.getElementById(percentageId);
           percentageBox.innerHTML = '<span>' + result.toString() + '</span>';
+        }
+        if (!nameObj[0].value || !nameObj[1].value) {
+          if ( percentageBox.childNodes[0] ) {
+            percentageBox.removeChild(percentageBox.childNodes[0]);
+          }
         }
       }, true);
     }
@@ -106,10 +111,16 @@ function avgCalc() {
   }
 
 }
-
-// This implementation was adapted from:
-// http://stackoverflow.com/questions/13952686/how-to-make-html-input-tag-only-accept-numerical-values
+/* numberCheck
+ * Check if the input is a number
+ * PARAMS: Current event
+ * RETURN: - true if not a number
+ *         - false if input is not a number
+ * This implementation was adapted from:
+ * http://stackoverflow.com/questions/13952686/how-to-make-html-input-tag-only-accept-numerical-values
+ */
 function numberCheck(event) {
+  // input is within [0-9] 
   if (event.charCode > 31 && ( event.charCode < 48 || event.charCode > 57 )) {
     return false;
   }
