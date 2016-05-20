@@ -119,9 +119,17 @@ function avgCalc() {
  * This implementation was adapted from:
  * http://stackoverflow.com/questions/13952686/how-to-make-html-input-tag-only-accept-numerical-values
  */
-function numberCheck(event) {
-  // input is within [0-9]
-  if (event.charCode > 31 && ( event.charCode < 48 || event.charCode > 57 ) && event.charCode != 46) {
+function numberCheck(txt, event) {
+  if (event.charCode === 46) {
+    // Must check for dots first
+    if (txt.value.indexOf('.') === -1) {
+         return true;
+     } else {
+         return false;
+     }
+  }
+  else if (event.charCode > 31 && ( event.charCode < 48 || event.charCode > 57 )) {
+    // input is within [0-9]
     return false;
   }
   return true;
